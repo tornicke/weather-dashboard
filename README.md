@@ -8,7 +8,7 @@
 </p>
 
 <h2>Acceptance Criteria</h2>
-<li>GGIVEN a weather dashboard with form inputs, WHEN I search for a city, THEN I am presented with current and future conditions for that city and that city is added to the search history
+<li>GIVEN a weather dashboard with form inputs, WHEN I search for a city, THEN I am presented with current and future conditions for that city and that city is added to the search history
 </li>
 <li>WHEN I view current weather conditions for that city, THEN I am presented with the city name, the date, an icon representation of weather conditions, the temperature, the humidity, the wind speed, and the UV index
 </li>
@@ -21,7 +21,7 @@
 
 <h2>Grading Requirements</h2>
 <p>Technical Acceptance Criteria:</p>
-<li>Satisfies all of the basic acceptance criteria and uses the OpenWeather API to retrieve weather data and uses localStorage to store persistent data</li>
+<ul>Satisfies all of the basic acceptance criteria and uses the OpenWeather API to retrieve weather data and uses localStorage to store persistent data</ul>
 <li>Application deployed at live URL,</li>
 <li>Application loads with no errors,</li>
 <li>Application GitHub URL submitted,</li>
