@@ -4,37 +4,36 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!--adding a favicon-->
-    <link rel="shortcut icon" href="./Assets/images/favicon.png"/>
-    <link rel="stylesheet" href="./Assets/css/styles.css">
-    <link
-      rel="stylesheet"
-      href="https://unpkg.com/@blaze/css@x.x.x/dist/blaze/blaze.css"
     <title>Weather Dashboard</title>
+    <!--adding a favicon-->
+    <link rel="shortcut icon" href="./Assets/images/favicon.png" />
+    <link rel="stylesheet" href="./Assets/css/styles.css" />
+    <link rel="stylesheet"
+    href="https://unpkg.com/@blaze/css@x.x.x/dist/blaze/blaze.css"
   </head>
 
   <body>
     <header class="header">
-      <h2 class=headerTitle>Weather Dashboard</h2>
+      <h2 class="headerTitle">Weather Dashboard</h2>
     </header>
     <p id="searchText">Search for a City:</p>
     <input id="cityInput" />
     <button id="searchButton">Search</button>
-  
+
     <!--adding the current div for the info box (weather for the current day)-->
     <div id="current"></div>
 
     <!--adding 5 divs, one for each upcoming day-->
 
-    <div class ="dailyBox" id="dayOneForecast"></div>
+    <div class="dailyBox" id="dayOneForecast"></div>
 
-    <div class ="dailyBox" id="dayTwoForecast"></div>
+    <div class="dailyBox" id="dayTwoForecast"></div>
 
-    <div class ="dailyBox" id="dayThreeForecast"></div>
+    <div class="dailyBox" id="dayThreeForecast"></div>
 
-    <div class ="dailyBox" id="dayFourForecast"></div>
+    <div class="dailyBox" id="dayFourForecast"></div>
 
-    <div class ="dailyBox" id="dayFiveForecast"></div>
+    <div class="dailyBox" id="dayFiveForecast"></div>
 
     <!--adding jQuery and moment.js-->
     <script
