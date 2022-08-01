@@ -192,3 +192,61 @@ const fifthDayForecast = (fifthDayData) => {
   var humidityEl = $("<p>").text(`Humidity: ${fifthDayData.humidity} %`);
   $("#dayFiveForecast").append(humidityEl);
 };
+
+function saveSearchResult(searchResult) {
+  var history = localStorage.getItem("history")
+    ? JSON.parse(localStorage.getItem("history"))
+    : [];
+
+  if (history.includes(searchResult)) {
+    //if the list already includes the city with the same name
+    return;
+  }
+
+  //removing the oldest search from the list, the new search replaces the removed one
+  if (history.length >= 8) {
+    history.splice(0, 1);
+    history.push(searchResult);
+  } else {
+    history.push(searchResult);
+  }
+  localStorage.setItem("history", JSON.stringify(history));
+
+  renderSearchResults();
+}
+
+function renderSearchResults() {
+  if (localStorage.getItem("history")) {
+    // show the history bar
+    $(".historyBar").css("display", "block");
+    $(".table").remove();
+
+    var history = JSON.parse(localStorage.getItem("history"));
+    for (let index = 0; index < history.length; index++) {
+      const searchResult = history[index];
+      renderSearchResults(searchResult);
+    }
+    /*$(".newActivity").on("click", getRandomActivity);*/
+  }
+}
+
+renderSearchResults();
+
+// add event listener to search button
+$("#searchButton").on("click", function () {
+  const searchInputValue = $("#cityInput").val();
+  // show container
+  $(".historyBar").css("display", "block");
+});
+
+function renderSearchResults(searchResult) {
+  var historyBar = $("<div>")
+    .attr("class", "o-grid__cell o-grid__cell--width-30")
+    .append(searchResultEl);
+  var tableEl = $("<div>").attr(
+    "class",
+    "table o-grid o-grid--small-fit o-grid--medium-fit o-grid--large-fit"
+  );
+  tableEl.append(historyBar);
+  $("#history-Bar").append(tableEl);
+}
