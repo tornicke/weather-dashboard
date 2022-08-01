@@ -47,7 +47,7 @@ const fetchWeather = (lat, lon, cityName) => {
       $(".dailyBox").css({
         float: "left",
         width: "150px",
-        height: "180px",
+        height: "220px",
         color: "white",
         background: "rgb(62, 63, 93)",
         margin: "5px",
@@ -95,6 +95,8 @@ const firstDayForecast = (firstDayData) => {
     `http://openweathermap.org/img/wn/${firstDayData.weather[0].icon}.png`
   );
   $("#dayOneForecast").append(icon);
+  var firstDayDateEl = $("<h3>").text(`${firstDayDateString}`);
+  $("#dayOneForecast").append(firstDayDateEl);
   var tempEl = $("<p>").text(`Temp: ${firstDayData.temp.day} °F`);
   $("#dayOneForecast").append(tempEl);
   var windEl = $("<p>").text(`Wind: ${firstDayData.wind_speed} MPH`);
@@ -115,6 +117,8 @@ const secondDayForecast = (secondDayData) => {
     `http://openweathermap.org/img/wn/${secondDayData.weather[0].icon}.png`
   );
   $("#dayTwoForecast").append(icon);
+  var secondDayDateEl = $("<h3>").text(`${secondDayDateString}`);
+  $("#dayTwoForecast").append(secondDayDateEl);
   var tempEl = $("<p>").text(`Temp: ${secondDayData.temp.day} °F`);
   $("#dayTwoForecast").append(tempEl);
   var windEl = $("<p>").text(`Wind: ${secondDayData.wind_speed} MPH`);
@@ -135,6 +139,8 @@ const thirdDayForecast = (thirdDayData) => {
     `http://openweathermap.org/img/wn/${thirdDayData.weather[0].icon}.png`
   );
   $("#dayThreeForecast").append(icon);
+  var thirdDayDateEl = $("<h3>").text(`${thirdDayDateString}`);
+  $("#dayThreeForecast").append(thirdDayDateEl);
   var tempEl = $("<p>").text(`Temp: ${thirdDayData.temp.day} °F`);
   $("#dayThreeForecast").append(tempEl);
   var windEl = $("<p>").text(`Wind: ${thirdDayData.wind_speed} MPH`);
@@ -148,13 +154,15 @@ const fourthDayForecast = (fourthDayData) => {
   /*emptying the contents so new results are generated once the new search has been made*/
   $("#dayFourForecast").empty();
   /*converting the current date and time into the American format using moment.js*/
-  let forthDayDateString = moment.unix(fourthDayData.dt).format("MM/DD/YYYY");
+  let fourthDayDateString = moment.unix(fourthDayData.dt).format("MM/DD/YYYY");
   /*adding the weather icon dynamically for the Day 4 weather info box*/
   let icon = $("<img>").attr(
     "src",
     `http://openweathermap.org/img/wn/${fourthDayData.weather[0].icon}.png`
   );
   $("#dayFourForecast").append(icon);
+  var fourthDayDateEl = $("<h3>").text(`${fourthDayDateString}`);
+  $("#dayFourForecast").append(fourthDayDateEl);
   var tempEl = $("<p>").text(`Temp: ${fourthDayData.temp.day} °F`);
   $("#dayFourForecast").append(tempEl);
   var windEl = $("<p>").text(`Wind: ${fourthDayData.wind_speed} MPH`);
@@ -175,6 +183,8 @@ const fifthDayForecast = (fifthDayData) => {
     `http://openweathermap.org/img/wn/${fifthDayData.weather[0].icon}.png`
   );
   $("#dayFiveForecast").append(icon);
+  var fifthDayDateEl = $("<h3>").text(`${fifthDayDateString}`);
+  $("#dayFiveForecast").append(fifthDayDateEl);
   var tempEl = $("<p>").text(`Temp: ${fifthDayData.temp.day} °F`);
   $("#dayFiveForecast").append(tempEl);
   var windEl = $("<p>").text(`Wind: ${fifthDayData.wind_speed} MPH`);
