@@ -194,7 +194,7 @@ const fifthDayForecast = (fifthDayData) => {
 };
 
 function saveSearchResult(searchResult) {
-  var history = localStorage.getItem("history")
+  let history = localStorage.getItem("history")
     ? JSON.parse(localStorage.getItem("history"))
     : [];
 
@@ -221,7 +221,7 @@ function renderSearchResults() {
     $(".historyBar").css("display", "block");
     $(".table").remove();
 
-    var history = JSON.parse(localStorage.getItem("history"));
+    let history = JSON.parse(localStorage.getItem("history"));
     for (let index = 0; index < history.length; index++) {
       const searchResult = history[index];
       renderSearchResults(searchResult);
@@ -235,7 +235,7 @@ renderSearchResults();
 // add event listener to search button
 $("#searchButton").on("click", function () {
   const searchInputValue = $("#cityInput").val();
-  // show container
+  // show history bar
   $(".historyBar").css("display", "block");
 });
 
