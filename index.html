@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--adding a favicon-->
+    <link rel="shortcut icon" href="./Assets/images/favicon.png"/>
+    <link rel="stylesheet" href="./Assets/css/styles.css">
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/@blaze/css@x.x.x/dist/blaze/blaze.css"
+    <title>Weather Dashboard</title>
+  </head>
+
+  <body>
+    <header class="header">
+      <h2 class=headerTitle>Weather Dashboard</h2>
+    </header>
+    <p id="searchText">Search for a City:</p>
+    <input id="cityInput" />
+    <button id="searchButton">Search</button>
+  
+    <!--adding the current div for the info box (weather for the current day)-->
+    <div id="current"></div>
+
+    <!--adding 5 divs, one for each upcoming day-->
+
+    <div class ="dailyBox" id="dayOneForecast"></div>
+
+    <div class ="dailyBox" id="dayTwoForecast"></div>
+
+    <div class ="dailyBox" id="dayThreeForecast"></div>
+
+    <div class ="dailyBox" id="dayFourForecast"></div>
+
+    <div class ="dailyBox" id="dayFiveForecast"></div>
+
+    <!--adding jQuery and moment.js-->
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.js"
+      integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script src="./Assets/js/script.js"></script>
+  </body>
+</html>
