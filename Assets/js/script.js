@@ -226,7 +226,6 @@ function renderSearchResults() {
       const searchResult = history[index];
       renderSearchResults(searchResult);
     }
-    /*$(".newActivity").on("click", getRandomActivity);*/
   }
 }
 
@@ -250,3 +249,5 @@ function renderSearchResults(searchResult) {
   tableEl.append(historyBar);
   $("#history-Bar").append(tableEl);
 }
+
+renderSearchResults();
