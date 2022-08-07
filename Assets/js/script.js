@@ -18,6 +18,7 @@ const callApi = (event) => {
       console.log(data);
       fetchWeather(data.coord.lat, data.coord.lon, data.name);
     });
+  saveSearchResult(city.value);
 };
 
 const fetchWeather = (lat, lon, cityName) => {
@@ -224,7 +225,7 @@ function renderSearchResults() {
     let history = JSON.parse(localStorage.getItem("history"));
     for (let index = 0; index < history.length; index++) {
       const searchResult = history[index];
-      renderSearchResults(searchResult);
+      displaySearchResults(searchResult);
     }
   }
 }
@@ -238,7 +239,7 @@ $("#searchButton").on("click", function () {
   $(".historyBar").css("display", "block");
 });
 
-function renderSearchResults(searchResult) {
+function displaySearchResults(searchResultEl) {
   var historyBar = $("<div>")
     .attr("class", "o-grid__cell o-grid__cell--width-30")
     .append(searchResultEl);
