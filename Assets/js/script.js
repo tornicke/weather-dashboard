@@ -236,7 +236,10 @@ renderSearchResults();
 $("#searchButton").on("click", function () {
   const searchInputValue = $("#cityInput").val();
   // show history bar
-  $(".historyBar").css("display", "block");
+  $(".historyBar").css({
+    border: "1px solid #000000",
+    "box-sizing": "border-box",
+  });
 });
 
 function displaySearchResults(searchResultEl) {
